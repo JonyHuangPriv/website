@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,255,195,0.15), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.1s;
+}
+
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 50%;
+  min-width: 300px;
+  max-width: 320px;
+  background-color: #0d0d0d;
+  padding: 2rem;
+  border-right: 1px solid #333;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  background: #00ffcc;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
+  margin-bottom: 10px;
+}
+
+.content {
+  margin-left: 5%;
+  width: 70%;
+  padding: 2rem;
+  overflow-y: auto;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+    .skills span {
+      display: inline-block;
+      background-color: transparent;
+      color: #00ffcc;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      margin: 0.2rem 0.4rem 0.2rem 0;
+      border: 1px solid #00ffcc;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .skills span:hover {
+      background-color: #00ffcc;
+      color: #000;
+    }
+.highlight {
+  color: #00ffcc;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar, .content {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+}
